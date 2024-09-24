@@ -20,12 +20,12 @@ MainWindow::MainWindow() :
                                             &MainWindow::on_select_input_image_button_clicked));
 
     // Realizando a composição
+    set_child(layout);
     layout.append(entry);
     layout.append(create_card_button);
     layout.append(select_input_image_button);
     layout.append(card_preview_frame);
         card_preview_frame.set_child(card_picture);
-    set_child(layout);
 }
 
 void MainWindow::on_create_card_button_clicked()
