@@ -1,12 +1,14 @@
 #include "mainWindow.h"
 #include "glibmm/ustring.h"
+#include "gtkmm/enums.h"
 #include "sigc++/functors/mem_fun.h"
 #include <iostream>
 
 MainWindow::MainWindow() : 
     create_card_button("Create"),
     select_input_image_button("Select Image"),
-    file_chooser_dialog("Choose Input Image")
+    card_preview_frame(Gtk::Align::END, Gtk::Align::CENTER, 0.6858),
+    card_picture("template.jpg")
 {
     // Create Card Button
     create_card_button.set_margin(10);
@@ -21,6 +23,8 @@ MainWindow::MainWindow() :
     layout.append(entry);
     layout.append(create_card_button);
     layout.append(select_input_image_button);
+    layout.append(card_preview_frame);
+        card_preview_frame.set_child(card_picture);
     set_child(layout);
 }
 
@@ -32,5 +36,5 @@ void MainWindow::on_create_card_button_clicked()
 
 void MainWindow::on_select_input_image_button_clicked()
 {
-    file_chooser_dialog.activate();
+    std::cout << "Choose a card" << std::endl;
 }

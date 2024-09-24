@@ -6,6 +6,8 @@
 #include <gtkmm/entry.h>
 #include <gtkmm/flowbox.h>
 #include <gtkmm/filechooserdialog.h>
+#include <gtkmm/aspectframe.h>
+#include <gtkmm/picture.h>
 
 class MainWindow : public Gtk::Window 
 {
@@ -22,7 +24,8 @@ class MainWindow : public Gtk::Window
         Gtk::Entry entry;
         Gtk::FlowBox layout;
         Gtk::Button select_input_image_button;
-        Gtk::FileChooserDialog file_chooser_dialog;
+        Gtk::AspectFrame card_preview_frame;
+        Gtk::Picture card_picture;
 };
 
 #endif 
