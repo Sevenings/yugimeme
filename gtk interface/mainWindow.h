@@ -1,11 +1,12 @@
 #ifndef MAIN_WINDOW_H
 #define MAIN_WINDOW_H
 
+#include "giomm/file.h"
 #include <gtkmm/button.h>
 #include <gtkmm/window.h>
 #include <gtkmm/entry.h>
 #include <gtkmm/flowbox.h>
-#include <gtkmm/filechooserdialog.h>
+#include <gtkmm/filedialog.h>
 #include <gtkmm/aspectframe.h>
 #include <gtkmm/picture.h>
 
@@ -18,6 +19,7 @@ class MainWindow : public Gtk::Window
         //Signal handlers:
         void on_create_card_button_clicked();
         void on_select_input_image_button_clicked();
+        void on_image_file_selected(const Glib::RefPtr<Gio::File>& file);
 
         //Member widgets:
         Gtk::Button create_card_button;
